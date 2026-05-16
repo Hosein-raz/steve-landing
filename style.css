@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    padding: 50px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 200px);
+    height: calc(100vh - 200px);
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 25px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+header {
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    right: 20px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.05);
+    padding: 20px 50px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+}
+
+header nav h1 a {
+    color: #BF360C;
+    font-size: 24px;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #BF360C;
+    padding: 10px 15px;
+    border-radius: 25px;
+}
+
+header nav ul li a:hover, .active {
+    background-color: #FFF;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.content {
+    width: 900px;
+    height: auto;
+    background-color: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 50px;
+    padding-right: 110px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    transform: translateX(-160px);
+}
+
+.content h2 {
+    color: #BF360C;
+    font-size: 28px;
+}
+
+.content p {
+    color: #BF360C;
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.content button {
+    color: #BF360C;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background-color: #FFF;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.imgbox img {
+    width: 500px;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0%,100% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    right: -25px;
+}
+
+.social ul li a {
+    width: 50px;
+    height: 50px;
+    background: #FFF;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social ul li a img {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.6);
+    transition: 0.5s;
+}
+
+.social li:hover a img {
+    transform: scale(0.6) rotate(360deg);
+}
+
+@media (max-width:1000px) {
+    body {
+        height: 100%;
+        padding: 50px 10px 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: calc(100% - 20px);
+        padding: 20px;
+    }
+
+    header {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: -55px;
+        width: 100%;
+    }
+
+    header nav {
+        flex-direction: column;
+    }
+
+    header nav ul { 
+        margin: 20px 0 10px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 10px 3px;
+    }
+
+    .content { 
+        transform: translateX(0);
+        max-width: 100%;
+        padding: 30px;
+        margin-top: -30px;
+    }
+
+    .content h2 {
+        font-size: 22px;
+    }
+
+    .content p {
+        font-size: 15px;
+    }
+
+    .content button {
+        font-size: 13px;
+    }
+
+    .imgbox img {
+        width: 400px;
+        animation: animate 3s linear infinite;
+    }
+
+    .imgbox {
+        margin-bottom: 50px;
+    }
+
+    @keyframes animate {
+    0%,100% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+    }
+
+    .social {
+        position: relative;
+        right: 0;
+    }
+
+    .social ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social ul li {
+        margin: 0 8px;
+    }
+}
